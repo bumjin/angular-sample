@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app ng-controller="AppCtrl">
+<html lang="en" ng-app="contactApp" ng-controller="AppCtrl">
 <head>
   <meta charset="utf-8">
   <title>Contacts Manager</title>
@@ -63,9 +63,14 @@
                     <label><input type="checkbox" ng-model="center"> text-center</label>
                     <label><input type="checkbox" ng-model="error"> text-danger</label>
                     <label><input type="checkbox" ng-model="styler"> ng-style</label>
+                    <label><input type="checkbox" ng-model="styler2"> ng-style2</label>
 
                     <p ng-class="{'text-center': center, 'text-danger': error}" ng-style="styleDemo()">
                         Lorem ipsum dolor sit amet
+                    </p>
+
+                    <p ng-class="{'text-center': center, 'text-danger': error}" ng-style="styleDemo2()">
+                        Hello2
                     </p>
 
                     <div ng-init="test = 'Hello, World'"></div>
