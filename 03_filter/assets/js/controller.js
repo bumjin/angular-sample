@@ -7,7 +7,16 @@ angular.module('contactApp', [])
 })
 
 .controller('AppCtl', function($scope, $filter, jsonFilter){
-    
+    var vm = {
+        'apple' : 1200000,
+        'price' : 5300.00
+    }
+
+    $scope.myNum = $filter('number')(vm.apple)
+
+    $scope.myDate = $filter('date')(725508723000, 'yyyy.mm.dd')
+    $scope.amount = $filter('currency')(vm.price, '원', 1)
+
     $scope.contacts = [
         {
             name: 'John Doe',

@@ -6,7 +6,8 @@ angular.module('contactApp', ['ngRoute'])
 
 .config(function($routeProvider){
 
-    $routeProvider.when('/', {
+    $routeProvider
+    .when('/', {
         controller: 'indexCtrl',
         templateUrl: 'assets/partials/index.html'
     })
@@ -16,7 +17,12 @@ angular.module('contactApp', ['ngRoute'])
         templateUrl: 'assets/partials/add.html'
     })
 
-    .when('/contact/:id', {
+    .when('/modify-contact', {
+        controller: 'modifyCtrl',
+        templateUrl: 'assets/partials/modify.html'
+    })
+
+    .when('/contact/:id/:name', {
         controller: 'contactCtrl',
         templateUrl: 'assets/partials/contact.html'
     })
@@ -56,10 +62,16 @@ angular.module('contactApp', ['ngRoute'])
 
 })
 
+.controller('modifyCtrl', function($scope){
+    console.log('in the modify controller')
+    $scope.modifyTest = 'hello'
+})
 /*-----------------------------------
 | Contact Controller
 ------------------------------------*/
 
 .controller('contactCtrl', function($scope, $routeParams){
-
+    console.log($routeParams.id)
+    console.log($routeParams.name)
 });
+

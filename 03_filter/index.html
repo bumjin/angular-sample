@@ -41,6 +41,10 @@
 
             {{12345 | currency:'W'}}
 
+            <h3>Currency2</h3>
+
+            {{amount}}
+
             <h3>Number</h3>
 
             {{12345.225 | number:2}}
@@ -49,8 +53,13 @@
 
             {{'Lorem ipsum dolor sit amet' | limitTo:15}}
 
-            <h3>Date</h3>
+            <h3>MyNum</h3>
+            {{myNum}}<br>
 
+            <h3>MyDate</h3>
+            {{myDate}}<br>
+
+            <h3>Date</h3>
             {{725508723000 | date:'dd/MM/yyyy'}}<br>
             {{725508723000 | date:'medium'}}<br>
             {{725508723000 | date:"h 'in the morning'"}}<br>
