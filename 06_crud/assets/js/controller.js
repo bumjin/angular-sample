@@ -39,8 +39,36 @@ angular.module('contactApp', ['ngRoute', 'ngSanitize'])
 /*-----------------------------------
 | Contacts Services
 ------------------------------------*/
+.factory('contactService', function () {
+  var contactFormServer = {
+      'contacts' : [
+          {
+              name: 'AAA',
+              phone: '0123456789',
+              address: '123, Some Street\nLeicester\nLE1 2AB',
+              email: 'steve228uk@gmail.com',
+              website: 'stephenradford.me',
+              notes: ''
+          },
+          {
+              name: 'BBB',
+              phone: '91234859',
+              address: '234, Some Street\nLeicester\nLE1 2AB',
+              email: 'declan@declan.com',
+              website: 'declanproud.me',
+              notes: 'Some notes about the contact.'
+          }
+        ]
+    };
+    return {
+        getAllContact: function() {
+            return contactFormServer.contacts;
+        }
 
-.factory('contacts', function(){
+    }
+
+})
+/*.factory('contacts', function(){
     var contacts = [
         {
             name: 'Stephen Radford',
@@ -81,7 +109,7 @@ angular.module('contactApp', ['ngRoute', 'ngSanitize'])
             contacts.splice(index, 1);
         }
     };
-})
+})*/
 
 /*-----------------------------------
 | Gravatar Directive
@@ -149,13 +177,14 @@ angular.module('contactApp', ['ngRoute', 'ngSanitize'])
 | Index Controller
 ------------------------------------*/
 
-.controller('indexCtrl', function($scope, contacts){
+.controller('indexCtrl', function($scope, contactService){
+    console.log('indexCtrl  ')
+    console.log(contactService)
+    $scope.contacts = contactService.getAllContact();
 
-    $scope.contacts = contacts.get();
-
-    $scope.delete = function(index){
+    /*$scope.delete = function(index){
         contacts.destroy(index);
-    };
+    };*/
 
 })
 

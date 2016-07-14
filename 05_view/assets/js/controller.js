@@ -42,7 +42,33 @@ angular.module('contactApp', ['ngRoute'])
 ------------------------------------*/
 
 .controller('indexCtrl', function($scope){
-
+    var vm = {
+        'contacts' : [
+            {
+                name: '가나다',
+                phone: '01234567890',
+                email: 'john@example.com'
+            },
+            {
+                name: '홍길동',
+                phone: '09876543210',
+                email: 'karan@email.com'
+            }
+        ]
+    };
+    $scope.contacts = vm.contacts;
+    /*$scope.contacts = [
+        {
+            name: 'John Doe',
+            phone: '01234567890',
+            email: 'john@example.com'
+        },
+        {
+            name: '홍길동',
+            phone: '09876543210',
+            email: 'karan@email.com'
+        }
+        ];*/
 })
 
 /*-----------------------------------
